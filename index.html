@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div class="containerBox" id="container">
+        <h1 id="title">TodoList</h1>
+        <section class="inputBox">
+            <input type="text" id="userInput">
+            <button id="addBtn">추가하기</button>
+        </section>
+        <section class="taskBox">
+            <div class="taskTab" id="taskTab">
+                <div id="underLine"></div>
+                <div id="allTab">
+                    ALL
+                </div>
+                <div id="onGoingTab">
+                    ONGOING
+                </div>
+                <div id="doneTab">
+                    DONE
+                </div>
+            </div>
+            <div id="taskBoard">
+                <div class="listBox" id="tasklist">
+                    <div>TodoList</div>
+                    <div>
+                        <button>Check</button>
+                        <button>Delete</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+
+    <script src="./main.js"></script>
+</body>
+
+</html>
