@@ -6,7 +6,38 @@ body {
 
 }
 
+#title {
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+}
+
+.inputBox {
+    display: flex;
+    justify-content: center;
+}
+
+#userInput {
+    border: 1px solid pink;
+    padding: 5px;
+    margin: 5px;
+}
+
+#addBtn {
+    border: 1px solid pink;
+    background-color: pink;
+    padding: 5px;
+    margin: 10px;
+}
+
+.taskTab {
+    display: flex;
+    justify-content: center;
+}
+
+
 .containerBox {
+    justify-content: center;
     background-color: white;
     min-height: 90vh;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
@@ -20,20 +51,24 @@ body {
     display: flex;
     border-bottom: 1px solid pink;
     position: relative;
+    justify-content: space-between;
 }
 
 .taskTab div {
     padding: 1em;
+    margin: 0 10px;
 }
 
 #underLine {
-    height: 4px;
+    height: 5px;
     background-color: pink;
     position: absolute;
     width: 60px;
     left: 0px;
-    top: 52px;
+    top: 48px;
+    bottom: 0px;
     padding: 0px;
+    transition: width 0.3s ease;
 }
 
 .listBox {
@@ -42,6 +77,25 @@ body {
     padding: 1em;
 }
 
+/* 체크버튼과 딜리트 버튼을 눌러야만 css가 적용되네...ㅜㅠㅠ */
+.checkBtn {
+    border: 1px solid pink;
+    background-color: pink;
+    padding: 5px;
+    margin: 5px;
+}
+
+.deleteBtn {
+    border: 1px solid pink;
+    background-color: pink;
+    padding: 5px;
+    margin: 5px;
+}
+
 .taskDone {
     text-decoration: line-through;
+}
+
+.taskTab div {
+    cursor: pointer;
 }
