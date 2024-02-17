@@ -56,6 +56,7 @@ function addTodo() {
     taskList.push(taskObject)
     taskInput.value = ''
     taskAddButton.disabled = true
+    taskInput.focus()
     render(taskList, currentTabId)
 }
 
