@@ -1,3 +1,9 @@
+.gamja-flower-regular {
+    font-family: "Gamja Flower", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
 body {
     margin: 0;
     background-image: url(./todo-background.jpg);
@@ -7,6 +13,7 @@ body {
 }
 
 #title {
+    font-family: "Gamja Flower", sans-serif;
     padding: 15px;
     display: flex;
     justify-content: center;
@@ -18,12 +25,15 @@ body {
 }
 
 #userInput {
+    font-family: "Gamja Flower", sans-serif;
+    font-size: large;
     border: 1px solid pink;
     padding: 5px;
     margin: 5px;
 }
 
 #addBtn {
+    font-family: "Gamja Flower", sans-serif;
     border: 1px solid pink;
     background-color: pink;
     padding: 5px;
@@ -31,11 +41,13 @@ body {
 }
 
 .taskTab {
+    font-family: "Gamja Flower", sans-serif;
     display: flex;
     justify-content: center;
 }
 
 .containerBox {
+    font-family: "Gamja Flower", sans-serif;
     justify-content: center;
     background-color: white;
     min-height: 90vh;
