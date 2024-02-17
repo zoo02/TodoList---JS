@@ -3,11 +3,11 @@
 // Check 버튼을 클릭하면 할일이 끝난 것으로 간주하고 가로줄을 친다✅
 // 되돌리기 버튼을 클릭하면 다시 Ongoing 상태로 되돌릴 수 있다.✅
 // Delete 버튼을 클릭하면 할일이 리스트에서 삭제된다.✅
-// All, Ongoing, Done 탭을 누르면 underLine이 해당 탭으로 이동하며 목록이 보여진다
-// Done 탭은 할일이 끝난 아이템만
-// Ongoing 탭은 진행중인 아이템만
-// All 탭은 모든 아이템을 상태에 상관없이 보여준다
-// 모바일 버전에서도 확인할 수 있는 반응형 웹이다.
+// All, Ongoing, Done 탭을 누르면 underLine이 해당 탭으로 이동하며 목록이 보여진다✅
+// Done 탭은 할일이 끝난 아이템만✅
+// Ongoing 탭은 진행중인 아이템만✅
+// All 탭은 모든 아이템을 상태에 상관없이 보여준다✅
+// 모바일 버전에서도 확인할 수 있는 반응형 웹이다.✅
 
 
 let taskInput = document.getElementById("userInput")
@@ -16,14 +16,13 @@ let taskTabs = document.querySelectorAll(".taskTab div")
 let taskList = []
 taskAddButton.addEventListener("click", addTodo)
 let underLine = document.getElementById("underLine")
+taskAddButton.disabled = true
 
-
-taskTabs.forEach(taskTabs => taskTabs.addEventListener("click", (e) => underLineIndicator(e)))
+taskTabs.forEach(taskTab => taskTab.addEventListener("click", (e) => underLineIndicator(e)))
 
 function underLineIndicator(e) {
     underLine.style.left = e.currentTarget.offsetLeft + "px"
     underLine.style.width = e.currentTarget.offsetWidth + "px"
-    underLine.style.top = e.currentTarget.offsetTop + e.currentTarget.offsetHeight + "px"
 }
 
 for (let i = 1; i < taskTabs.length; i++) {
@@ -38,18 +37,25 @@ function onclickTab(event) {
 
 }
 
+// 입력값의 길이가 0이면 추가하기 버튼을 비활성화 시킨다
+taskInput.addEventListener("input", disabledAddButton)
+function disabledAddButton() {
+    taskAddButton.disabled = taskInput.value.length == 0
+};
 
 
 // 할일을 입력하고 추가하기 버튼을 누르면 실행되는 함수
 function addTodo() {
+
     let taskObject = {
         taskContent: taskInput.value,
         isDone: false,
         id: randomId()
-
     }
 
     taskList.push(taskObject)
+    taskInput.value = ''
+    taskAddButton.disabled = true
     render(taskList, currentTabId)
 }
 
@@ -87,18 +93,18 @@ function render(todoList, currentTab) {
 
         if (newList[i].isDone == true) {
             resultHTML += `<div class="listBox" id="tasklist">
-            <div class="taskDone">${newList[i].taskContent}</div>
+            <div class="taskValue">${newList[i].taskContent}</div>
             <div>
-            <button class="checkBtn" onClick="taskDone('${newList[i].id}')">Check</button>
-            <button class="deleteBtn" onClick="taskDelete('${newList[i].id}')">Delete</button>
+            <button class="checkBtn" onClick="taskDone('${newList[i].id}')"></button>
+            <button class="deleteBtn" onClick="taskDelete('${newList[i].id}')"></button>
             </div >
             </div > `
         } else {
             resultHTML += `<div class="listBox" id="tasklist">
-        <div>${newList[i].taskContent}</div>
+        <div class="taskValue2">${newList[i].taskContent}</div>
         <div>
-        <button onClick="taskDone('${newList[i].id}')">Check</button>
-        <button onClick="taskDelete('${newList[i].id}')">Delete</button>
+        <button class="checkBox" onClick="taskDone('${newList[i].id}')"></button>
+        <button class="deleteBtn" onClick="taskDelete('${newList[i].id}')"></button>
         </div >
     
         </div > `
